@@ -7,7 +7,7 @@ const [data,setData] = useState({})
 const [location, setLocation] = useState('')
 // const owmIcon = data.weather[0].icon;
 
-  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location},us&appid=&units=imperial`
+  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location},us&appid=e92afa1b3e33cd2a6597f1733680f8df&units=imperial`
 
   const searchLocation = (event) => {
     if (event.key === 'Enter') {
