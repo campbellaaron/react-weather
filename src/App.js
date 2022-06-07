@@ -5,7 +5,7 @@ function App() {
 
 const [data,setData] = useState({})
 const [location, setLocation] = useState('')
-const imgPath = `http://openweathermap.org/img/wn/{data.weather[0].icon}@2x.png`
+// const owmIcon = data.weather[0].icon;
 
   const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location},us&appid=&units=imperial`
 
@@ -13,7 +13,6 @@ const imgPath = `http://openweathermap.org/img/wn/{data.weather[0].icon}@2x.png`
     if (event.key === 'Enter') {
       axios.get(apiUrl).then((response) => {
         setData(response.data)
-        console.log(response.data)
       })
       setLocation('')
     }
@@ -35,7 +34,7 @@ const imgPath = `http://openweathermap.org/img/wn/{data.weather[0].icon}@2x.png`
             {data.name ? <p>{data.name}, US</p> : null}
           </div>
           <div className="icons">
-          {data.weather ? <img src={imgPath} alt=""/> : null}
+          {data.weather ? <img src={`http://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`} alt=""/>  : null}
           </div>
           <div className="temp">
             {data.main ? <h2>{data.main.temp.toFixed()}&deg; F</h2> : null}
@@ -60,6 +59,9 @@ const imgPath = `http://openweathermap.org/img/wn/{data.weather[0].icon}@2x.png`
           </div>
         </div>
         }
+        <div className="footer">
+          <p>Copyright &copy; 2022 <a href="https://campbellaaron.github.io">Aaron Campbell</a>. All rights reserved.</p>
+        </div>
       </div>
     </div>
   );
