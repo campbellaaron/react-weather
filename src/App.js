@@ -1,14 +1,7 @@
 import React, {useState} from "react";
 import axios from "axios";
-import Geocode from "react-geocode";
 
 function App() {
-
-  Geocode.setApiKey("AIzaSyB_YQUlh0rGU_aioENUqaW3hQkPbVO_eiE");
-  Geocode.setLanguage("en");
-  Geocode.setLocationType("ROOFTOP");
-  Geocode.enableDebug();
-  
 
 const [data,setData] = useState({})
 const [location, setLocation] = useState('')
