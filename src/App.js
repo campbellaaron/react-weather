@@ -12,8 +12,9 @@ function App() {
 
 const [data,setData] = useState({})
 const [location, setLocation] = useState('')
+const imgPath = `http://openweathermap.org/img/wn/{data.weather[0].icon}@2x.png`
 
-  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location},us&appid=e92afa1b3e33cd2a6597f1733680f8df&units=imperial`
+  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location},us&appid=&units=imperial`
 
   const searchLocation = (event) => {
     if (event.key === 'Enter') {
@@ -39,6 +40,9 @@ const [location, setLocation] = useState('')
         <div className="top">
           <div className="location">
             {data.name ? <p>{data.name}, US</p> : null}
+          </div>
+          <div className="icons">
+          {data.weather ? <img src={imgPath} alt=""/> : null}
           </div>
           <div className="temp">
             {data.main ? <h2>{data.main.temp.toFixed()}&deg; F</h2> : null}
