@@ -60,7 +60,7 @@ const [location, setLocation] = useState('')
         </div>
         }
         <div className="footer">
-          <p>Copyright &copy; 2022 <a href="https://campbellaaron.github.io">Aaron Campbell</a>. All rights reserved.</p>
+          <p>Developed in React and deployed in 2022 by <a href="https://campbellaaron.github.io">Aaron Campbell</a>.</p>
         </div>
       </div>
     </div>
